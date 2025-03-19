@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('img/header_background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: left;
+}
+
+.title {
+    opacity: 0;
+    transform: translateX(100%);
+    text-align: center;
+    transition: all 2s ease-out;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.title.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-paragraph {
+    opacity: 0;
+    width: 50%;
+    padding: 10px;
+    position: relative;
+    transition: all 2s ease-out;
+    will-change: transform, opacity;
+}
+
+.slide-left {
+    transform: translateX(-100%);
+    text-align: left ;
+    left: 0;
+}
+
+.slide-right {
+    transform: translateX(100%);
+    text-align: right;
+    left: 50%;
+}
+
+.about-paragraph.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-paragraph {
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
+}
+
+
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.flag-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.language-options {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #333;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.flag-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    border: 1px solid #fff;
+}
+
+nav a {
+    color: #0043a7;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+h2 {
+    color: #0043a7;
+}
+
+h3 {
+    color: #14a6c7;
+}
+
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.work-item {
+    background-color: #fff;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
