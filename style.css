@@ -1,12 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
     background-color: #1e1e1e;
     color: #d4d4d4;
-    font-family: 'Courier New', Courier, monospace;
 }
 
+/* SOCIAL ICONS */
 .social-icons {
     margin-top: 20px;
     display: flex;
@@ -20,29 +20,23 @@ body {
     transition: color 0.3s, transform 0.3s;
 }
 
-/* Hover effect per LinkedIn */
 .social-icons a[href*="linkedin"]:hover {
     color: #0A66C2;
-    /* LinkedIn blue */
 }
 
-/* Hover effect per GitHub */
 .social-icons a[href*="github"]:hover {
     color: #842cba;
-    /* GitHub bluastro */
 }
 
-/* Hover effect per Instagram */
 .social-icons a[href*="instagram"]:hover {
     color: rgb(202, 16, 146);
-    /* Instagram pink */
 }
 
-/* Anche un leggero ingrandimento */
 .social-icons a:hover {
     transform: scale(1.4);
 }
 
+/* HEADER */
 header {
     height: 100vh;
     display: flex;
@@ -54,7 +48,7 @@ header {
     background-position: center;
     color: #fff;
     padding: 60px 20px;
-    text-align: left;
+    text-align: center;
 }
 
 header h1 {
@@ -67,10 +61,10 @@ header p#profession {
     margin-bottom: 20px;
 }
 
+/* TITLES */
 .title {
     opacity: 0;
     transform: translateX(100%);
-    text-align: center;
     transition: all 2s ease-out;
     margin: 0 auto;
     width: fit-content;
@@ -81,6 +75,7 @@ header p#profession {
     transform: translateX(0);
 }
 
+/* ABOUT PARAGRAPH ANIMATIONS */
 .about-paragraph {
     opacity: 0;
     width: 50%;
@@ -107,17 +102,7 @@ header p#profession {
     transform: translateX(0);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .about-paragraph {
-        width: 100%;
-        left: 0;
-        text-align: center;
-        transform: translateX() !important;
-    }
-}
-
-
+/* LANGUAGE SELECTOR */
 .language-selector {
     position: absolute;
     top: 20px;
@@ -128,7 +113,8 @@ header p#profession {
     gap: 10px;
 }
 
-.flag-icon, .flag-option {
+.flag-icon,
+.flag-option {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -153,8 +139,7 @@ header p#profession {
     pointer-events: auto;
 }
 
-
-
+/* SECTION + TEXT */
 nav a {
     color: #0043a7;
     margin: 0 10px;
@@ -173,7 +158,6 @@ section {
     padding: 40px;
     text-align: center;
 }
-
 
 .gallery {
     display: flex;
@@ -194,4 +178,51 @@ footer {
     color: #fff;
     padding: 10px;
     text-align: center;
+}
+
+/* -------------------------- */
+/* 🎯 RESPONSIVE MOBILE PART */
+/* -------------------------- */
+
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p#profession {
+        font-size: 1rem;
+    }
+
+    .social-icons a {
+        font-size: 24px;
+    }
+
+    .language-selector {
+        top: 10px;
+        right: 10px;
+    }
+
+    .about-paragraph {
+        width: 90%;
+        text-align: center;
+        left: 0;
+    }
+
+    .slide-left,
+    .slide-right {
+        transform: translateX(0) !important;
+        text-align: center;
+        left: 0;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .work-item {
+        width: 80%;
+    }
+
 }
