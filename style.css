@@ -7,6 +7,42 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 30px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* Hover effect per LinkedIn */
+.social-icons a[href*="linkedin"]:hover {
+    color: #0A66C2;
+    /* LinkedIn blue */
+}
+
+/* Hover effect per GitHub */
+.social-icons a[href*="github"]:hover {
+    color: #842cba;
+    /* GitHub bluastro */
+}
+
+/* Hover effect per Instagram */
+.social-icons a[href*="instagram"]:hover {
+    color: rgb(202, 16, 146);
+    /* Instagram pink */
+}
+
+/* Anche un leggero ingrandimento */
+.social-icons a:hover {
+    transform: scale(1.4);
+}
+
 header {
     height: 100vh;
     display: flex;
@@ -14,12 +50,21 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-image: url('img/header_background.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
     padding: 60px 20px;
     text-align: left;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+header p#profession {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
 .title {
@@ -47,7 +92,7 @@ header {
 
 .slide-left {
     transform: translateX(-100%);
-    text-align: left ;
+    text-align: left;
     left: 0;
 }
 
@@ -68,6 +113,7 @@ header {
         width: 100%;
         left: 0;
         text-align: center;
+        transform: translateX() !important;
     }
 }
 
@@ -76,33 +122,38 @@ header {
     position: absolute;
     top: 20px;
     right: 20px;
-    cursor: pointer;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
 }
 
-.flag-icon {
+.flag-icon, .flag-option {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: 2px solid #fff;
+    cursor: pointer;
 }
 
 .language-options {
-    display: none;
-    position: absolute;
-    top: 40px;
-    right: 0;
-    background-color: #333;
-    padding: 5px;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.flag-option {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin: 5px;
-    border: 1px solid #fff;
+.language-options.open {
+    transform: scaleX(1);
+    opacity: 1;
+    pointer-events: auto;
 }
+
+
 
 nav a {
     color: #0043a7;
@@ -122,6 +173,7 @@ section {
     padding: 40px;
     text-align: center;
 }
+
 
 .gallery {
     display: flex;
